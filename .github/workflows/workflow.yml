@@ -2,6 +2,6 @@ name: hello world
 on: [workflow_dispacth]
 jobs:
   hello_world:
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
     steps:
-    - run: echo "hello_world" 
+      - run: echo "hello_world" 

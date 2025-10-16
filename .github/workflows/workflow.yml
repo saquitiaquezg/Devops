@@ -1,7 +1,19 @@
 name: hello world
-on: [workflow_dispacth]
+on:
+  push:
+    branches: [ unittest ]
+
 jobs:
   hello_world:
   runs-on: ubuntu-latest
-    steps:
-      - run: echo "hello world" 
+  steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-pyton@v4 
+        with:
+          pyton-version: '3.10'
+
+      - run: pip install unittest
+
+      - run: pyton main_test.py
